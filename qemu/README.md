@@ -17,8 +17,8 @@ within fdisk:
 
 `losetup --offset $((2048*512)) --find luks.raw` this will attach a 
 /dev/loop* device to the first partition of *luks.raw*  
-..* the `--offset` option takes a value in bytes. 2048 is the start sector, 512 is the sector size in bytes.
-..* running `fdisk luks.raw` again and running `p` will show you sector size and start sector.
+the `--offset` option takes a value in bytes. 2048 is the start sector, 512 is the sector size in bytes.
+running `fdisk luks.raw` again and running `p` will show you sector size and start sector.
 `losetup` to check which /dev/loop* device is used for luks.raw  
 `cryptsetup luksFormat /dev/loop*`  
 `cryptsetup luksOpen /dev/loop* <name>`  
